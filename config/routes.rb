@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   post 'usersessions/create'
 
-  get 'usersessions/sign_up'
+  get 'usersessions/sign_out'
 
   resources :usersessions
   resources :posts

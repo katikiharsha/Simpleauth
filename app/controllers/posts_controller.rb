@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :user_login_required
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
@@ -70,5 +71,15 @@ class PostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:title, :desc)
+    end
+    def user_login_required
+      if current_user.nil?
+        flash[:notice] = "please login to view the content"
+        redirect_to "/usersessions/sign_in"
+    end
+  end
+
+    def current_user
+      User.find_by_id(session[:user_id])
     end
 end
