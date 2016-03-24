@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sign in:</strong>
+  <%= @usersession.sign_in %>
+</p>
+
+<p>
+  <strong>Create:</strong>
+  <%= @usersession.create %>
+</p>
+
+<p>
+  <strong>Sign up:</strong>
+  <%= @usersession.sign_up %>
+</p>
+
+<%= link_to 'Edit', edit_usersession_path(@usersession) %> |
+<%= link_to 'Back', usersessions_path %>

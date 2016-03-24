@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'usersessions/sign_in'
+
+  post 'usersessions/create'
+
+  get 'usersessions/sign_up'
+
+  resources :usersessions
   resources :posts
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.
